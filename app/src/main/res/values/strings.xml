@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">SkidataSmartWear</string>
+    <string name="header_resort_selection">Resorts</string>
+    <string name="button_label_resort">hbutton</string>
+    <string name="title_activity_resort_details">Resort Details</string>
+    <string name="title_activity_order_payment_confirmation">Confirm order?</string>
+    <string name="payment_confirmed_text">Payment confirmed</string>
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.
     -->
-    <string name="hello_world">Hello Square World!</string>
 </resources>
