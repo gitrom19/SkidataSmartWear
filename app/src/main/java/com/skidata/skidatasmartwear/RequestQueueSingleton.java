@@ -18,7 +18,8 @@ public class RequestQueueSingleton {
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
     private static Context mCtx;
-    public static String URL_PREFIX = "http://192.168.8.101:8080/";
+    public static String URL_PREFIX = "http://192.168.1.101:8080/";
+    public static String NFC_ID = "ABC";
 
     private RequestQueueSingleton(Context context) {
         mCtx = context;

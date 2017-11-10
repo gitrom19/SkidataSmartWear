@@ -1,5 +1,6 @@
 package com.skidata.skidatasmartwear;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.wear.widget.WearableLinearLayoutManager;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends WearableActivity {
+    private  Thread t;
 
     private TextView mTextView;
     private WearableRecyclerView mWearableRecyclerView;
@@ -28,7 +30,11 @@ public class MainActivity extends WearableActivity {
 
         // Enables Always-on
         setAmbientEnabled();
-        new Thread(new OpenOrderWatcher(this, mTextView)).start();
+
+        OpenOrderWatcher.THREAD = new OpenOrderWatcher(this, mTextView);
+        OpenOrderWatcher.THREAD.start();
+        OpenOrderWatcher.THREAD.setFlag(true);
+//        startOrderWatcher(this, mTextView);
     }
 
     public void onResortButtonClicked(View view) {
@@ -36,4 +42,8 @@ public class MainActivity extends WearableActivity {
         Intent resortsDetailIntent = new Intent(this, ResortDetails.class);
         this.startActivity(resortsDetailIntent);
     }
+
+//    public static void startOrderWatcher(Activity activity, View view ) {
+//        new Thread(new OpenOrderWatcher(activity, view)).start();
+//    }
 }
